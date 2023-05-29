@@ -137,7 +137,7 @@ nav {
   -webkit-animation-fill-mode: both;
   border-radius: 50%;
   background-color: #000;
-  box-shadow: 0 0 30px 20px #6699cc81;
+  /* box-shadow: 0 0 30px 20px #6699cc81; */
   user-select: none;
 }
 

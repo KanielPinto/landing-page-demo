@@ -11,11 +11,13 @@ var scene,
 function initScene() {
   scene = new THREE.Scene();
 
-  sceneLight = new THREE.DirectionalLight(0xF6DDEB, 0.5);
+  sceneLight = new THREE.DirectionalLight(0x61479C, 0.5);
   sceneLight.position.set(0, 0, 1);
   scene.add(sceneLight);
 
-  portalLight = new THREE.PointLight(0x93CCF8, 10, 800, 3);
+  //#30D5C8
+
+  portalLight = new THREE.PointLight(0xC8A2C8, 20, 550, 2);
   portalLight.position.set(0, 0, 250);
   scene.add(portalLight);
 
