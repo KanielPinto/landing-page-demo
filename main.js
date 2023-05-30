@@ -106,6 +106,7 @@ function update() {
       p = null;
     });
 
+    
     renderer.render(scene, cam);
 
     delta = delta % interval;
