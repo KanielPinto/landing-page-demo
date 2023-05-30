@@ -11,13 +11,13 @@ var scene,
 function initScene() {
   scene = new THREE.Scene();
 
-  sceneLight = new THREE.DirectionalLight(0x61479C, 0.5);
+  sceneLight = new THREE.DirectionalLight(0x241B50, 0.5);
   sceneLight.position.set(0, 0, 1);
   scene.add(sceneLight);
 
   //#30D5C8
 
-  portalLight = new THREE.PointLight(0xC8A2C8, 20, 550, 2);
+  portalLight = new THREE.PointLight(0xC8A2C8, 25, 850, 4);
   portalLight.position.set(0, 0, 250);
   scene.add(portalLight);
 
@@ -27,7 +27,8 @@ function initScene() {
     1,
     1000
   );
-  cam.position.z = 107;
+  cam.position.z = 112;
+  cam.position.x = -7;
   scene.add(cam);
 
   renderer = new THREE.WebGLRenderer();
