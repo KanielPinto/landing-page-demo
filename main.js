@@ -103,7 +103,7 @@ function update() {
   if (delta > interval) {
     // The draw or time dependent code are here
     portalParticles.forEach((p) => {
-      p.rotation.z -= 0.003 * 1.5;
+      p.rotation.z -= 0.003 * 2.5;
       p = null;
     });
 
