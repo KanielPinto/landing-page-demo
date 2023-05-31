@@ -11,13 +11,13 @@ var scene,
 function initScene() {
   scene = new THREE.Scene();
 
-  sceneLight = new THREE.DirectionalLight(0x241B50, 0.5);
+  sceneLight = new THREE.DirectionalLight(0x241b50, 0.5);
   sceneLight.position.set(0, 0, 1);
   scene.add(sceneLight);
 
   //#30D5C8
 
-  portalLight = new THREE.PointLight(0xC8A2C8, 25, 850, 4);
+  portalLight = new THREE.PointLight(0xB084BC, 30, 1050, 4);
   portalLight.position.set(0, 0, 250);
   scene.add(portalLight);
 
@@ -27,7 +27,7 @@ function initScene() {
     1,
     1000
   );
-  cam.position.z = 112;
+  cam.position.z = 117;
   cam.position.x = -7;
   scene.add(cam);
 
@@ -38,6 +38,7 @@ function initScene() {
 
   particleSetup();
 }
+
 function particleSetup() {
   let loader = new THREE.TextureLoader();
 
@@ -53,7 +54,7 @@ function particleSetup() {
       transparent: true,
     });
 
-    for (let p = 620; p > 250; p--) {
+    for (let p = 618; p > 250; p--) {
       let particle = new THREE.Mesh(portalGeo, portalMaterial);
       particle.position.set(
         p * Math.cos((4 * p * Math.PI) / 180),
@@ -106,7 +107,6 @@ function update() {
       p = null;
     });
 
-    
     renderer.render(scene, cam);
 
     delta = delta % interval;
