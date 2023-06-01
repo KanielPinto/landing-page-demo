@@ -9,6 +9,15 @@ var scene,
   portalParticles = [],
   smokeParticles = [];
 
+const canvas = document.getElementById("body");
+function getWidth() {
+  return parseInt(window.getComputedStyle(canvas).width);
+}
+
+function getHeight() {
+  return parseInt(window.getComputedStyle(canvas).height);
+}
+
 function initScene() {
   scene = new THREE.Scene();
 
@@ -18,23 +27,20 @@ function initScene() {
 
   //#30D5C8
 
-  portalLight = new THREE.PointLight(0x61479C, 35, portalLightDistance, 4);
+  portalLight = new THREE.PointLight(0x61479c, 35, portalLightDistance, 4);
   portalLight.position.set(0, 0, 250);
   scene.add(portalLight);
 
-  cam = new THREE.PerspectiveCamera(
-    160,
-    window.innerWidth / window.innerHeight,
-    1,
-    1000
-  );
+  cam = new THREE.PerspectiveCamera(160, getWidth() / getHeight(), 1, 1000);
   cam.position.z = 117;
   cam.position.x = -35;
+  cam.aspect = getWidth() / getHeight();
   scene.add(cam);
 
   renderer = new THREE.WebGLRenderer();
   renderer.setClearColor(0x0e0b1e, 1);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(getWidth(), getHeight());
+  renderer.setPixelRatio(window.devicePixelRatio);
   document.body.appendChild(renderer.domElement);
 
   particleSetup();
@@ -81,15 +87,17 @@ function particleSetup() {
     }
 
     window.addEventListener("resize", onWindowResize, false);
+    window.addEventListener("orientationchange", onWindowResize, false);
 
     update();
   });
 }
 
 function onWindowResize() {
-  cam.aspect = window.innerWidth / window.innerHeight;
+  cam.aspect = getWidth() / getHeight();
   cam.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(getWidth(), getHeight());
 }
 
 let clock = new THREE.Clock();
@@ -123,7 +131,7 @@ function update() {
   //   renderer.render(scene, cam);
 
   //   delta = delta % interval2;
-    
+
   //   portalLight.position.z = 250;
   // }
 }
