@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Myriad Pro Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Regular"),
+    url("./assets/fonts/myriadpro/MYRIADPRO-REGULAR.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Myriad Pro Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Bold"), url("./assets/fonts/myriadpro/MYRIADPRO-BOLD.woff") format("woff");
+}
+
 :root {
   --primary: #b084bc;
   --light: #ededed;
@@ -15,7 +30,7 @@ body {
   margin: 0px;
   overflow: hidden;
   background-image: "./assets/eye.webp";
-  font-family: "Playfair", serif;
+  font-family: "Myriad Pro Regular", serif;
   font-size: 1.4rem;
 }
 
@@ -105,6 +120,7 @@ nav {
 .menu a:hover {
   color: gold;
   font-size: 1.5rem;
+  font-family: "Myriad Pro Bold", serif;
 }
 
 @media (min-width: 768px) {
