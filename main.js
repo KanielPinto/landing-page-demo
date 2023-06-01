@@ -40,7 +40,7 @@ function initScene() {
   renderer = new THREE.WebGLRenderer("high-performance");
   renderer.setClearColor(0x0e0b1e, 1);
   renderer.setSize(getWidth(), getHeight());
-  renderer.setPixelRatio(window.devicePixelRatio - 1.5);
+  renderer.setPixelRatio(window.devicePixelRatio - 1.7);
   document.body.appendChild(renderer.domElement);
 
   particleSetup();
