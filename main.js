@@ -5,6 +5,7 @@ var scene,
   portalLight,
   cam,
   renderer,
+  portalLightDistance = 900,
   portalParticles = [],
   smokeParticles = [];
 
@@ -17,7 +18,7 @@ function initScene() {
 
   //#30D5C8
 
-  portalLight = new THREE.PointLight(0xB084BC, 30, 1050, 4);
+  portalLight = new THREE.PointLight(0x61479C, 35, portalLightDistance, 4);
   portalLight.position.set(0, 0, 250);
   scene.add(portalLight);
 
@@ -28,7 +29,7 @@ function initScene() {
     1000
   );
   cam.position.z = 117;
-  cam.position.x = -7;
+  cam.position.x = -35;
   scene.add(cam);
 
   renderer = new THREE.WebGLRenderer();
@@ -94,13 +95,14 @@ function onWindowResize() {
 let clock = new THREE.Clock();
 let delta = 0;
 // 30 fps
-let interval = 1 / 30;
+let interval1 = 1 / 30;
+let interval2 = 1 / 60;
 
 function update() {
   requestAnimationFrame(update);
   delta += clock.getDelta();
 
-  if (delta > interval) {
+  if (delta > interval1) {
     // The draw or time dependent code are here
     portalParticles.forEach((p) => {
       p.rotation.z -= 0.003 * 2.5;
@@ -109,8 +111,21 @@ function update() {
 
     renderer.render(scene, cam);
 
-    delta = delta % interval;
+    delta = delta % interval1;
   }
+
+  // if (delta > interval2) {
+  //   // The draw or time dependent code are here
+  //   if (Math.random() > 0.95) {
+  //     portalLight.position.z = 175;
+  //   }
+
+  //   renderer.render(scene, cam);
+
+  //   delta = delta % interval2;
+    
+  //   portalLight.position.z = 250;
+  // }
 }
 
 initScene();
