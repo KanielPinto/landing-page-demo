@@ -37,10 +37,10 @@ function initScene() {
   cam.aspect = getWidth() / getHeight();
   scene.add(cam);
 
-  renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer("high-performance");
   renderer.setClearColor(0x0e0b1e, 1);
   renderer.setSize(getWidth(), getHeight());
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(window.devicePixelRatio - 1.5);
   document.body.appendChild(renderer.domElement);
 
   particleSetup();
