@@ -213,15 +213,15 @@ img {
 
 @media (max-width: 800px) {
   .logo {
-    height: 250px;
-    width: 250px;
+    height: 280px;
+    width: 280px;
   }
 }
 
 @media (max-width: 660px) {
   .logo {
-    height: 230px;
-    width: 230px;
+    height: 260px;
+    width: 260px;
   }
 }
 
