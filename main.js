@@ -9,7 +9,7 @@ var scene,
   portalParticles = [],
   smokeParticles = [];
 
-const canvas = document.getElementById("html");
+const canvas = document.getElementById("main-container");
 function getWidth() {
   return parseInt(window.getComputedStyle(canvas).width);
 }
