@@ -37,10 +37,10 @@ function initScene() {
   cam.aspect = getWidth() / getHeight();
   scene.add(cam);
 
-  renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer("high-performance");
   renderer.setClearColor(0x0e0b1e, 1);
   renderer.setSize(getWidth(), getHeight());
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(window.devicePixelRatio - 1.5);
   document.body.appendChild(renderer.domElement);
 
   particleSetup();
@@ -104,7 +104,7 @@ let clock = new THREE.Clock();
 let delta = 0;
 // 30 fps
 let interval1 = 1 / 30;
-let interval2 = 1 / 60;
+// let interval2 = 1 / 60;
 
 function update() {
   requestAnimationFrame(update);
@@ -113,8 +113,7 @@ function update() {
   if (delta > interval1) {
     // The draw or time dependent code are here
     portalParticles.forEach((p) => {
-      p.rotation.z -= 0.003 * 2.5;
-      p = null;
+      p.rotation.z -= 0.003 * 2;
     });
 
     renderer.render(scene, cam);
