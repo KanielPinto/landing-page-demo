@@ -104,7 +104,7 @@ let clock = new THREE.Clock();
 let delta = 0;
 // 30 fps
 let interval1 = 1 / 30;
-let interval2 = 1 / 60;
+// let interval2 = 1 / 60;
 
 function update() {
   requestAnimationFrame(update);
@@ -113,8 +113,7 @@ function update() {
   if (delta > interval1) {
     // The draw or time dependent code are here
     portalParticles.forEach((p) => {
-      p.rotation.z -= 0.003 * 2.5;
-      p = null;
+      p.rotation.z -= 0.003 * 2;
     });
 
     renderer.render(scene, cam);
