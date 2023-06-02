@@ -33,20 +33,20 @@ body {
   background-color: black;
   font-family: "Myriad Pro Regular", serif;
   font-size: 1.4rem;
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  animation-delay: 2s;
-  animation: fadeInAnimation ease 4s;
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  animation-delay: 4s;
+  animation: fadeInAnimation ease 9s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 .nav-container {
-  max-width: 1305px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 nav {
@@ -117,20 +117,21 @@ nav {
 
 .menu a {
   color: var(--light);
-  margin: 0 16px;
+  margin: 0 0px;
   text-align: center;
-  width: 120px;
+  width: 200px;
   text-decoration: none;
   transition: 0.4s;
-  padding: 8px 16px;
-  border-radius: 99px;
+  padding: 8px 0px;
+  border-bottom: transparent solid 2px;
 }
 
 .menu a.is-active,
 .menu a:hover {
-  color: #f3cee2;
-  font-size: 1.5rem;
+  color: #e9aae1;
+  font-size: 1.7rem;
   font-weight: bold;
+  border-bottom: #e9aae1 solid 2px;
 }
 
 .mobile-menu {
@@ -139,7 +140,7 @@ nav {
   left: 0;
   width: 100%;
   min-height: 100vh;
-  z-index: 98;
+  z-index: 100000;
 
   padding-top: 5rem;
   opacity: 0;
@@ -166,7 +167,7 @@ nav {
 
 .mobile-menu a:hover {
   color: #eaaed0;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
@@ -182,7 +183,8 @@ nav {
 
 .main-container {
   position: absolute;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 100%;
@@ -191,19 +193,15 @@ nav {
 }
 
 .logo {
-  z-index: 100000;
+  z-index: 10000;
   width: 300px;
   height: 300px;
-  /* -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1.7s; */
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  margin: 0;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
   animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   border-radius: 50%;
-  /* background-color: #000; */
-  /* box-shadow: 0 0 30px 5px #B084BC; */
   user-select: none;
   pointer-events: none;
 }
