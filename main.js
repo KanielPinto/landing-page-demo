@@ -25,7 +25,7 @@ function getHeight() {
 function getPixelFactor() {
   if (getWidth() < 770) {
     console.log("pixel factor 1.7");
-    return 1.7;
+    return 1.78;
   } else {
     console.log("pixel factor 0.8");
     return 0.8;
