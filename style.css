@@ -33,6 +33,9 @@ body {
   background-color: black;
   font-family: "Myriad Pro Regular", serif;
   font-size: 1.4rem;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
   animation: fadeInAnimation ease 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -127,7 +130,7 @@ nav {
 .menu a:hover {
   color: #f3cee2;
   font-size: 1.5rem;
-  font-family: "Myriad Pro Bold", serif;
+  font-weight: bold;
 }
 
 .mobile-menu {
@@ -164,7 +167,7 @@ nav {
 .mobile-menu a:hover {
   color: #eaaed0;
   font-size: 1.6rem;
-  font-family: "Myriad Pro Bold", serif;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -188,11 +191,12 @@ nav {
 }
 
 .logo {
+  z-index: 100000;
   width: 300px;
   height: 300px;
-  -webkit-animation-delay: 1s;
+  /* -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
-  animation-delay: 1.7s;
+  animation-delay: 1.7s; */
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   animation-fill-mode: both;
