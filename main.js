@@ -18,6 +18,16 @@ function getHeight() {
   return parseInt(window.getComputedStyle(canvas).height);
 }
 
+function getPixelFactor() {
+  if (getWidth() < 770) {
+    console.log("pixel factor 1.5");
+    return 1.5;
+  } else {
+    console.log("pixel factor 0.8");
+    return 0.8;
+  }
+}
+
 function initScene() {
   scene = new THREE.Scene();
 
@@ -39,8 +49,8 @@ function initScene() {
 
   renderer = new THREE.WebGLRenderer("high-performance");
   renderer.setClearColor(0x0e0b1e, 1);
-  renderer.setSize(getWidth(), getHeight()-2);
-  renderer.setPixelRatio(window.devicePixelRatio-0.8);
+  renderer.setSize(getWidth(), getHeight() - 10);
+  renderer.setPixelRatio(window.devicePixelRatio - getPixelFactor());
   document.body.appendChild(renderer.domElement);
 
   particleSetup();
@@ -96,7 +106,9 @@ function particleSetup() {
 function onWindowResize() {
   cam.aspect = getWidth() / getHeight();
   cam.updateProjectionMatrix();
-  renderer.setPixelRatio(window.devicePixelRatio);
+
+  renderer.setPixelRatio(window.devicePixelRatio - getPixelFactor());
+
   renderer.setSize(getWidth(), getHeight());
 }
 
