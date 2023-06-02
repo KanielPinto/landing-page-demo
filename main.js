@@ -6,9 +6,8 @@ var scene,
   cam,
   renderer,
   portalLightDistance = 900,
-  portalParticles = [],
-  smokeParticles = [];
-
+  portalParticles = [];
+   
 const canvas = document.getElementById("main-container");
 function getWidth() {
   return parseInt(window.getComputedStyle(canvas).width);
@@ -24,10 +23,8 @@ function getHeight() {
 
 function getPixelFactor() {
   if (getWidth() < 770) {
-    console.log("pixel factor 1.7");
     return 1.78;
   } else {
-    console.log("pixel factor 0.8");
     return 0.8;
   }
 }
@@ -120,7 +117,6 @@ let clock = new THREE.Clock();
 let delta = 0;
 // 30 fps
 let interval1 = 1 / 30;
-// let interval2 = 1 / 60;
 
 function update() {
   requestAnimationFrame(update);
@@ -136,19 +132,6 @@ function update() {
 
     delta = delta % interval1;
   }
-
-  // if (delta > interval2) {
-  //   // The draw or time dependent code are here
-  //   if (Math.random() > 0.95) {
-  //     portalLight.position.z = 175;
-  //   }
-
-  //   renderer.render(scene, cam);
-
-  //   delta = delta % interval2;
-
-  //   portalLight.position.z = 250;
-  // }
 }
 
 initScene();
