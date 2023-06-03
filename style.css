@@ -42,22 +42,32 @@ body {
   animation-fill-mode: forwards;
 }
 
+.hh {
+  position: absolute;
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
 .lightning {
   visibility: none;
   position: fixed;
   min-height: 100vh;
   margin: 0;
-  background-color: rgba(196, 196, 243, 0.15);
+  background-color: rgba(196, 196, 243, 0.065);
   width: 100%;
-  -webkit-animation: flash ease-out 10s infinite;
-  -moz-animation: flash ease-out 10s infinite;
-  animation: flash ease-out 10s infinite;
-  animation-delay: 2s;
+  -webkit-animation: flash ease-out 11s infinite;
+  -moz-animation: flash ease-out 11s infinite;
+  animation: flash ease-out 11s infinite;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes flash {
   from {
-    visibility: visible;
+    visibility: none;
 
     opacity: 0;
   }
@@ -85,7 +95,7 @@ body {
 
 @keyframes flash {
   from {
-    visibility: visible;
+    visibility: none;
     opacity: 0;
   }
   92% {
@@ -179,7 +189,7 @@ nav {
 
 .menu {
   display: none;
-  flex: 1 1 0%;
+  flex: 0.7 1 0%;
   justify-content: space-evenly;
   margin: 0 -16px;
 }
@@ -244,7 +254,7 @@ nav {
   font-weight: bold;
 }
 
-@media (min-width: 768px), (min-width: 768px) and (orientation: landscape) {
+@media (min-width: 768px) {
   .mobile-menu,
   .hamburger {
     display: none;
@@ -254,15 +264,15 @@ nav {
   }
 }
 
-/* @media (min-width: 768px) {
+@media (orientation: landscape) and (max-width: 767px) {
   .mobile-menu,
   .hamburger {
-    display: none;
+    display: block;
   }
   .menu {
-    display: flex;
+    display: none;
   }
-} */
+}
 
 .main-container {
   position: absolute;
@@ -276,8 +286,8 @@ nav {
 }
 
 .logo {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   margin: 0;
   -webkit-animation-duration: 2s;
   animation-duration: 5s;
@@ -300,8 +310,8 @@ img {
 
 @media (max-width: 800px) {
   .logo {
-    height: 280px;
-    width: 280px;
+    height: 300px;
+    width: 300px;
   }
 }
 
@@ -314,15 +324,15 @@ img {
 
 @media (max-width: 380px) {
   .logo {
-    height: 230px;
-    width: 230px;
+    height: 250px;
+    width: 250px;
   }
 }
 
 @media (max-width: 290px) {
   .logo {
-    height: 150px;
-    width: 150px;
+    height: 230px;
+    width: 230px;
   }
 }
 
