@@ -25,7 +25,7 @@ function getPixelFactor() {
   if (getWidth() < 770) {
     return 1.7;
   } else {
-    return 0.69;
+    return 0.6;
   }
 }
 
