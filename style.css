@@ -32,8 +32,6 @@ body {
   margin: 0px;
   overflow: hidden;
   background-color: black;
-  font-family: "Myriad Pro Regular", serif;
-  font-size: 1.4rem;
   -webkit-animation-delay: 4s;
   -moz-animation-delay: 4s;
   animation-delay: 4s;
@@ -136,6 +134,8 @@ nav {
   z-index: 99;
   background-color: transparent;
   padding: 16px 32px;
+  font-family: "Myriad Pro Regular", serif;
+  font-size: 1.4rem;
 }
 
 .hamburger {
@@ -254,23 +254,13 @@ nav {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 970px) {
   .mobile-menu,
   .hamburger {
     display: none;
   }
   .menu {
     display: flex;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 767px) {
-  .mobile-menu,
-  .hamburger {
-    display: block;
-  }
-  .menu {
-    display: none;
   }
 }
 
@@ -282,17 +272,44 @@ nav {
   align-items: center;
   min-width: 100%;
   min-height: 100vh;
+  -webkit-animation-duration: 2s;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   margin: auto;
+}
+
+.overlay-image {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 99.7vh;
+  -webkit-animation-duration: 2s;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  margin: auto;
+  user-select: none;
+  pointer-events: none;
 }
 
 .logo {
   width: 320px;
   height: 320px;
   margin: 0;
-  -webkit-animation-duration: 2s;
-  animation-duration: 5s;
-  animation-fill-mode: both;
-  -webkit-animation-fill-mode: both;
+  border-radius: 50%;
+  animation: rotation 40s infinite linear;
+  user-select: none;
+  pointer-events: none;
+}
+
+.overlayLogo {
+  width: 321px;
+  height: 321px;
+  margin: 0;
   border-radius: 50%;
   user-select: none;
   pointer-events: none;
@@ -368,5 +385,14 @@ img {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
   }
 }
